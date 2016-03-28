@@ -1,0 +1,36 @@
+<div class="mail_view">
+
+    <div class="buttons">
+        <custom-button class="'send'" name="'Send'" ng-if="$ctrl.isNew"
+                       click-handler="$ctrl.sendMail()" disabled="newMailForm.$invalid"></custom-button>
+        <custom-button class="'del'" name="'Delete'" ng-if="!$ctrl.isNew"
+                       click-handler="$ctrl.remove($ctrl.mail.folder.toLowerCase())"></custom-button>
+    </div>
+    <div ng-if="!$ctrl.isNew" class="received_msg">
+        <div class="header">
+            <div class="topic">{{$ctrl.mail.topic}}</div>
+            <div class="name" ng-if="$ctrl.mail.name">{{$ctrl.mail.name}}</div>
+            <div class="email">{{$ctrl.mail.email}}</div>
+            <div class="date">{{$ctrl.mail.date | date: 'dd/MM/yyyy'}}</div>
+        </div>
+        <div class="letter_body">
+            {{$ctrl.mail.letterBody}}
+        </div>
+    </div>
+    <form name="newMailForm" novalidate>
+        <div ng-if="$ctrl.isNew" class="new_msg">
+            <div class="email">
+                <label>To:</label>
+                <input name="email" ng-model="$ctrl.mail.email" required type="email">
+                <messages element="newMailForm.email" errors="$ctrl.mailFieldErrors" visibility="newMailForm.email.$dirty"></messages>
+            </div>
+            <div class="topic">
+                <label>Subject:</label>
+                <input ng-model="$ctrl.mail.topic">
+            </div>
+
+            <textarea class="letter_body" ng-model="$ctrl.mail.letterBody"></textarea>
+
+        </div>
+    </form>
+</div>

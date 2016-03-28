@@ -1,0 +1,405 @@
+body {
+    font-family: Arial;
+}
+
+body li {
+    list-style: none
+}
+
+body ul {
+    margin: 0;
+    padding: 0;
+}
+
+.buttons {
+    font-size: 0;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #DDDDDD;
+    border: 1px solid #BBBBBB;
+    border-radius: 2px;
+    padding: 0 10px;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+}
+
+.button:hover {
+    background-color: #CCCCCC;
+}
+
+.button a {
+    display: inline-block;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.button.disabled  a{
+    pointer-events: none;
+    cursor:default;
+    color: #C0C0C0;
+}
+
+.button.disabled,
+.button.disabled:hover{
+    background-color: #E0E0E0;
+}
+
+.error_msg{
+    position: absolute;
+}
+
+.error_msg .msg{
+    color: #FF0000;
+    font-size: 16px;
+}
+
+
+header {
+    min-height: 60px;
+    background-color: #0096d6;
+    color: #FFFFFF;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 30px;
+    padding: 0 70px 0 45px;
+}
+
+header .top_nav {
+    display: inline-block;
+}
+
+header .top_nav ul {
+    font-size: 0;
+    padding-left: 30px;
+}
+
+header .top_nav ul li {
+    display: inline-block;
+}
+
+header .top_nav a {
+    display: inline-block;
+    padding: 30px 5px 23px 5px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+header .top_nav a:visited{
+    color: #FFFFFF;
+}
+
+header .top_nav a:hover {
+    background-color: #147fcb;
+}
+
+header .top_nav a.active,
+header .top_nav a.active:hover {
+    background-color: #1378c0;
+}
+
+main {
+    margin: 20px 0;
+    min-height: 720px;
+}
+
+main .left_col {
+    float: left;
+    width: 200px;
+}
+
+main .left_col .mail_menu {
+    cursor: pointer;
+    padding-left: 45px;
+}
+
+.mail_menu li {
+    padding-top: 8px;
+}
+
+.mail_menu .folder {
+    color: #0077cc;
+    padding-left: 30px;
+    line-height: 19px;
+    background: url(../mail-app/images/folder-icons.jpg) no-repeat;
+    text-decoration: none;
+}
+
+.mail_menu .folder:visited{
+    color: #0077cc;
+}
+
+.mail_menu .folder.inb {
+    background-position: 3px 2px;
+}
+
+.mail_menu .folder.dra {
+    background-position: 3px -30px;
+}
+
+.mail_menu .folder.tra {
+    background-position: 3px -92px;
+}
+
+.mail_menu .folder.spa {
+    background-position: 3px -123px;
+}
+
+.mail_menu .folder.sen {
+    background-position: 3px -60px;
+}
+
+.mail_menu a.active {
+    font-weight: bold;
+}
+
+main .right_col {
+    margin-left: 220px;
+}
+
+.mail_list,
+.contact_list,
+.contact_view,
+.mail_view {
+    padding-left: 45px;
+}
+
+.mail_list ul,
+.contact_list ul{
+    max-height: 672px;
+    overflow-y: auto;
+}
+
+.mail_list li, .contact_list li {
+    padding: 8px 3px;
+    border-bottom: 1px solid #DEDEDE;
+    cursor: pointer;
+}
+
+.mail_list .mail_address {
+    display: inline-block;
+    overflow: hidden;
+    width: 190px;
+}
+
+.mail_list li a {
+    color: #0077cc;
+}
+
+.mail_list .mail_content {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 585px;
+}
+
+.mail_list .topic {
+    color: #0077cc;
+}
+
+.mail_list .mail_fragment {
+    color: #9D9D9D;
+    padding-left: 20px;
+}
+
+.mail_list li:hover .mail_fragment {
+    color: #656972;
+}
+
+.mail_list li .date {
+    padding-left: 20px;
+    color: #656972;
+}
+
+.contact_list div {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.mail_list .row,
+.contact_list .row {
+    display: inline-block;
+    line-height: 16px;
+    margin-bottom: -3px;
+}
+
+.contact_list .name{
+    width: 275px;
+    color: #0077cc;
+}
+
+.contact_list .mail_address {
+    width: 200px;
+}
+
+.contact_list .mail_address a {
+    color: #0077cc;
+}
+
+.contact_list .birthdate {
+    width: 110px;
+    color: #9D9D9D;
+}
+
+.contact_list .address {
+    width: 285px;
+    color: #9D9D9D;
+}
+
+.contact_list li:hover .birthdate,
+.contact_list li:hover .address {
+    color: #656972;
+}
+
+.contact_view .name_row {
+    padding: 5px 0 20px;
+    position: relative;
+}
+
+.contact_view .name_row .name_text {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #0077cc;
+}
+
+.contact_view .name_row input {
+    margin-top: 6px;
+}
+
+.contact_view .row {
+    padding: 10px 0;
+    line-height: 24px;
+    position: relative;
+}
+
+.contact_view .row div {
+    display: inline-block;
+}
+
+.contact_view .row span,
+.contact_view .row a {
+    padding-left: 2px;
+}
+
+.contact_view .label_wrapper {
+    width: 91px;
+    text-align: right;
+    padding-right: 20px;
+    color: #656972;
+}
+
+.contact_view input {
+    font-size: 16px;
+    width: 200px;
+}
+
+.contact_view .name_row .error_msg{
+    top: 15px;
+    left: 210px;
+}
+
+.contact_view .row .error_msg{
+    top: 15px;
+    left: 210px;
+    top: 10px;
+    left: 323px;
+}
+
+.contact_view .birthdate input {
+    line-height: 20px;
+    height: 18px;
+}
+
+.contact_list .buttons .add,
+.contact_view .buttons .edit {
+    border-radius: 2px 0 0 2px;
+}
+
+.contact_list .buttons .add.single,
+.contact_view .buttons .edit.single {
+    border-radius: 2px;
+}
+
+.contact_list .buttons .del,
+.contact_view .buttons .del {
+    border-left: none;
+    border-radius: 0 2px 2px 0;
+}
+
+.mail_view .header {
+    border-bottom: 1px solid #AAAAAA;
+}
+
+.mail_view .received_msg .topic {
+    font-size: 20px;
+    padding-bottom: 15px;
+}
+
+.mail_view .received_msg .name {
+    padding-bottom: 10px;
+}
+
+.mail_view .received_msg .email {
+    padding-bottom: 15px;
+}
+
+.mail_view .received_msg .date {
+    padding-bottom: 30px;
+    color: #656972;
+}
+
+.mail_view .received_msg .letter_body {
+    line-height: 24px;
+    padding-top: 20px;
+}
+
+.mail_view .new_msg .email{
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.mail_view .new_msg .email .error_msg{
+    top: 2px;
+    right: 10px;
+}
+
+.mail_view .new_msg .topic{
+    padding-bottom: 40px;
+}
+
+.mail_view .new_msg label {
+    width: 80px;
+    display: inline-block;
+    color: #656972;
+}
+
+.mail_view .new_msg input {
+    width: 840px;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.mail_view .new_msg .letter_body{
+    width: 920px;
+    height: 400px;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 1200px;
+}
+
+footer {
+    background-color: #5A5A5A;
+    min-height: 100px;
+    color: #FFFFFF;
+}

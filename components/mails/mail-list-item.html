@@ -1,0 +1,14 @@
+<li>
+    <input type="checkbox" ng-model="$ctrl.mail.checked"/>
+    <!--ng-click="$ctrl.setSelectedMail({mail:$ctrl.mail})"-->
+    <div class="row" ui-sref="mailView({mailId:$ctrl.mail.id})">
+        <div class="mail_address">
+            <a>{{$ctrl.mail.name ? $ctrl.mail.name : $ctrl.mail.email}}</a>
+        </div>
+        <div class="mail_content">
+            <span class="topic">{{$ctrl.mail.topic}}</span>
+            <span class="mail_fragment">{{$ctrl.mail.letterBody}}</span>
+        </div>
+        <span class="date">{{$ctrl.mail.date | date: 'dd/MM/yyyy'}}</span>
+    </div>
+</li>

@@ -1,0 +1,10 @@
+<div class="mail_list" ng-if="!$ctrl.isMailSelected()">
+    <div class="buttons">
+        <custom-button class="'del'" name="'Delete'"
+                       click-handler="$ctrl.remove($ctrl.folderName.toLowerCase())"></custom-button>
+    </div>
+    <ul>
+        <mail-list-item mail="mail" ng-repeat="mail in $ctrl.mails | orderBy: '-date'"></mail-list-item>
+    </ul>
+</div>
+<ui-view></ui-view>

@@ -1,0 +1,8 @@
+<li>
+    <!--ng-click="$ctrl.setSelectedFolder({folderName: $ctrl.folder.name})"-->
+    <a ui-sref="mailList({folderName:$ctrl.folder.name})"
+       ui-sref-active="active"
+       ng-class="['folder', $ctrl.iconClass]">
+        {{$ctrl.folder.name}}
+    </a>
+</li>

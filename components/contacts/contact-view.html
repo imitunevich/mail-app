@@ -1,0 +1,39 @@
+<div class="contact_view">
+    <form name="contactForm" novalidate>
+        <div class="buttons">
+            <custom-button class="$ctrl.isNew ? 'single': 'edit'"
+                           name="$ctrl.editMode ? 'Save' : 'Edit'"
+                           disabled="contactForm.$invalid"
+                           click-handler="$ctrl.editMode ? $ctrl.save() : $ctrl.edit()"></custom-button>
+            <custom-button class="'del'" name="'Delete'" ng-if="!$ctrl.isNew"
+                           click-handler="$ctrl.remove()"></custom-button>
+        </div>
+        <div class="name_row">
+            <span class="name_text" ng-if="!$ctrl.editMode">{{$ctrl.contact.fullName}}</span>
+            <input name="name" ng-if="$ctrl.editMode" ng-model="$ctrl.contact.fullName" required ng-minlength="5">
+            <messages element="contactForm.name" errors="$ctrl.nameFieldErrors"></messages>
+        </div>
+        <div class="row">
+            <div class="label_wrapper"><label>Mail address</label></div>
+            <div class="mail_address">
+                <a ng-if="!$ctrl.editMode" href="mailto:{{$ctrl.contact.email}}">{{$ctrl.contact.email}}</a>
+                <input name="email" ng-if="$ctrl.editMode" ng-model="$ctrl.contact.email" type="email" required>
+                <messages element="contactForm.email" errors="$ctrl.mailFieldErrors"></messages>
+            </div>
+        </div>
+        <div class="row">
+            <div class="label_wrapper"><label>Birthdate</label></div>
+            <div class="birthdate">
+                <span ng-if="!$ctrl.editMode">{{$ctrl.contact.birthdate | date: 'dd/MM/yyyy'}}</span>
+                <input ng-if="$ctrl.editMode" change-date-format type="date" ng-model="$ctrl.contact.birthdate">
+            </div>
+        </div>
+        <div class="row">
+            <div class="label_wrapper"><label>Address</label></div>
+            <div class="address">
+                <span ng-if="!$ctrl.editMode">{{$ctrl.contact.address}}</span>
+                <input ng-if="$ctrl.editMode" ng-model="$ctrl.contact.address">
+            </div>
+        </div>
+    </form>
+</div>

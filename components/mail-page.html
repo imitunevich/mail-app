@@ -1,0 +1,14 @@
+<div class="left_col">
+    <nav class="mail_menu">
+        <div class="buttons">
+            <custom-button class="'nmes'" name="'New message'" sref="'newMail'"></custom-button>
+        </div>
+        <folders folders="$ctrl.folders" ></folders>
+    </nav>
+</div>
+<div class="right_col">
+    <ui-view></ui-view>
+    <!--<div ng-if="!$ctrl.isMailSelected()">
+        &lt;!&ndash;<mail-list ng-repeat="folder in $ctrl.folders" folder-name="folder.name" ng-if="$ctrl.isMailListActive(folder.id)"></mail-list>&ndash;&gt;
+    </div>-->
+</div>

@@ -1,0 +1,12 @@
+<li>
+    <input type="checkbox" ng-model="$ctrl.contact.checked"/>
+    <!--ng-click="$ctrl.setSelectedContact({contact:$ctrl.contact})"-->
+
+    <div class="row" ui-sref="contactView({contactId:$ctrl.contact.id})"
+         ng-click="$ctrl.setSelectedContact({contact:$ctrl.contact})">
+        <div class="name">{{$ctrl.contact.fullName}}</div>
+        <div class="mail_address"><a href="mailto:{{$ctrl.contact.email}}">{{$ctrl.contact.email}}</a></div>
+        <div class="birthdate">{{$ctrl.contact.birthdate | date: 'dd/MM/yyyy'}}</div>
+        <div class="address">{{$ctrl.contact.address}}</div>
+    </div>
+</li>
